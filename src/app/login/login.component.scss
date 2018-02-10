@@ -1,0 +1,53 @@
+@import "~styles/color";
+
+:host {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+
+
+  background: url("/assets/login-wallpaper.jpeg") center center no-repeat;
+  background-size: cover;
+
+  align-items: center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 4em;
+  text-transform: uppercase;
+  margin: 0 0 .8em 0;
+  line-height: 1rem;
+}
+
+form {
+  margin-right: auto;
+  margin-left: auto;
+
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid $darkPrimaryColor;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  /*border-radius: 20px;*/
+  background: $darkPrimaryColor;
+  color: $textColor;
+  font-size: 18px;
+
+  &:disabled {
+    background: #999;
+    cursor: wait;
+  }
+}

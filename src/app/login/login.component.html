@@ -1,0 +1,19 @@
+<form (submit)="tryLogin(email.value, password.value)">
+  <h1>Briky</h1>
+
+  <div>
+    <p *ngIf="error">Verificare le credenziali inserite.</p>
+    <div>
+      <input #email type="email" placeholder="Email" required>
+    </div>
+
+    <div>
+      <input #password type="password" placeholder="Password" required>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="loading">Login</button>
+    </div>
+  </div>
+
+</form>

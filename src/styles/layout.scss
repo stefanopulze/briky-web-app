@@ -1,0 +1,16 @@
+.chart-box {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid $primaryBorderColor;
+  border-radius: 3px;
+}
+
+
+.nav {
+  display: flex;
+  margin: .50em;
+
+  &-toolbar {
+    justify-content: space-between;
+  }
+}
