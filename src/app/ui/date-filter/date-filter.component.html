@@ -1,0 +1,12 @@
+<div class="nav nav-toolbar">
+  <ul class="pills">
+    <li (click)="update('group', 'WEEK');" [class.current]="filter.group === 'WEEK'">Settimana</li>
+    <li (click)="update('group', 'MONTH');" [class.current]="filter.group === 'MONTH'">Mese</li>
+    <li (click)="update('group', 'YEAR');" [class.current]="filter.group === 'YEAR'">Anno</li>
+  </ul>
+
+  <ul class="pills">
+    <li>28/01/2018</li>
+    <li>28/02/2018</li>
+  </ul>
+</div>

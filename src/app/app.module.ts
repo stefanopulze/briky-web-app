@@ -13,6 +13,8 @@ import {AuthStorage} from "./security/auth.storage";
 import {AuthService} from "./service/auth.service";
 import { ProfileComponent } from './page/profile/profile.component';
 import { PillsComponent } from './ui/pills/pills.component';
+import {ExpencesService} from "./service/expences.service";
+import { DateFilterComponent } from './ui/date-filter/date-filter.component';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { PillsComponent } from './ui/pills/pills.component';
     EuroPipe,
     DashboardComponent,
     ProfileComponent,
-    PillsComponent
+    PillsComponent,
+    DateFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,9 @@ import { PillsComponent } from './ui/pills/pills.component';
       multi: true
     },
     AuthStorage,
-    AuthService
+    AuthService,
+    ExpencesService,
+    EuroPipe
   ],
   bootstrap: [AppComponent]
 })
