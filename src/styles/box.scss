@@ -1,0 +1,44 @@
+$padding: 10px 20px;
+
+.white-box {
+
+  display: block;
+
+  border: 1px solid $primaryBorderColor;
+  border-radius: 4px;
+
+  background: #fff;
+  margin: 1em 0;
+
+  header {
+    padding: $padding;
+    border-bottom: 1px solid $primaryBorderColor;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 1rem;
+      margin: 0;
+      color: $darkPrimaryColor;
+    }
+
+    nav a {
+      padding: 10px 10px 9px 10px;
+      color: #7d94b6;
+
+      &:hover {
+        border-bottom: 2px solid #444;
+      }
+
+      &.current {
+        color: $darkPrimaryColor;
+        border-bottom: 2px solid $darkPrimaryColor;
+      }
+    }
+  }
+
+  section {
+    padding: 20px;
+  }
+
+}

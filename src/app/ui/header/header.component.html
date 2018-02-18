@@ -1,36 +1,21 @@
 <header>
   <div class="container header">
     <h1>Briky</h1>
-    <div>loading</div>
     <div>Bentornato, <b>{{user.name}}</b></div>
   </div>
 </header>
 
 <nav>
   <div class="container subheader">
-    <a href="#dashboard" >
-      <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 384 384" width="16" style="fill: #7C94B3; enable-background:new 0 0 16 16;" xml:space="preserve">
-        <g>
-          <rect x="213.333" y="0" width="170.667" height="128"/>
-          <rect x="0" y="0" width="170.667" height="213.333"/>
-          <rect x="0" y="256" width="170.667" height="128"/>
-          <rect x="213.333" y="170.667" width="170.667" height="213.333"/>
-        </g>
-      </svg>
+    <a routerLink="dashboard" [routerLinkActive]="['current']">
       <span>Dashboard</span>
     </a>
 
-    <a href="#profile" >
-      <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 384 384" width="16" style="fill: #7C94B3; enable-background:new 0 0 16 16;" xml:space="preserve">
-        <g>
-          <rect x="213.333" y="0" width="170.667" height="128"/>
-          <rect x="0" y="0" width="170.667" height="213.333"/>
-          <rect x="0" y="256" width="170.667" height="128"/>
-          <rect x="213.333" y="170.667" width="170.667" height="213.333"/>
-        </g>
-      </svg>
+    <a routerLink="analytics" [routerLinkActive]="['current']">
+      <span>Analisi</span>
+    </a>
+
+    <a routerLink="profile" [routerLinkActive]="['current']">
       <span>Profile</span>
     </a>
   </div>

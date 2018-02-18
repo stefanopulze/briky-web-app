@@ -15,6 +15,8 @@ import { ProfileComponent } from './page/profile/profile.component';
 import { PillsComponent } from './ui/pills/pills.component';
 import {ExpencesService} from "./service/expences.service";
 import { DateFilterComponent } from './ui/date-filter/date-filter.component';
+import { WhiteBoxComponent } from './ui/white-box/white-box.component';
+import { AnalyticsComponent } from './page/analytics/analytics.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { DateFilterComponent } from './ui/date-filter/date-filter.component';
     DashboardComponent,
     ProfileComponent,
     PillsComponent,
-    DateFilterComponent
+    DateFilterComponent,
+    WhiteBoxComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,

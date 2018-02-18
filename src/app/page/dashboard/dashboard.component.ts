@@ -4,29 +4,34 @@ import {ExpencesService} from "../../service/expences.service";
 import {EuroPipe} from "../../pipe/euro.pipe";
 import {ExpenseValue} from "../../model/expense.model";
 import {Filter} from "../../ui/date-filter/date-filter.model";
+import * as moment from "moment";
+
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  templateUrl: './dashboard.component.html
 })
 export class DashboardComponent implements OnInit {
 
   @ViewChild('c') chartElem: ElementRef;
 
   chart: Chart;
+  filter = new Filter();
 
   constructor(private expService: ExpencesService, private euro: EuroPipe) {
   }
 
   ngOnInit() {
-    this.loadNewData(new Filter());
+    this.setDate(-6, 'M');
   }
 
+  setDate(amount: number, unit: string) {
+    this.filter.from = moment().add(amount, unit).toDate();
+    this.filter.to = new Date();
+    this.filter.group = 'MONTH';
+    this.filter.alias = amount + unit;
 
-  loadNewData(filter: any) {
-    console.log(filter);
-    this.expService.values(filter).subscribe(this.drawChart.bind(this));
+    this.expService.values(this.filter).subscribe(this.drawChart.bind(this));
   }
 
   drawChart(data: ExpenseValue[]) {
@@ -41,7 +46,7 @@ export class DashboardComponent implements OnInit {
           datasets: [{
             label: '€',
             data: values,
-            backgroundColor: '#0667d073',
+            backgroundColor: '#0667d050',
             borderColor: '#0667d0',
           }]
         },
@@ -65,11 +70,15 @@ export class DashboardComponent implements OnInit {
               },
               gridLines: {
                 drawOnChartArea: false
+              },
+              ticks:{
+                fontColor: '#7C94B3'
               }
             }],
             yAxes: [{
               ticks: {
-                maxTicksLimit: 6
+                maxTicksLimit: 6,
+                fontColor: '#7C94B3'
               }
             }]
           }

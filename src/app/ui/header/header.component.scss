@@ -1,6 +1,7 @@
 @import "~styles/color";
 
 $headerSize: 60px;
+$subHeaderHeight: 50px;
 
 :host {
   display: block;
@@ -20,7 +21,7 @@ header {
   h1 {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     color: #fff;
   }
@@ -32,13 +33,19 @@ nav {
   border-bottom: 1px solid rgb(218, 225, 233);
 
   .container {
-    height: 50px;
+    height: $subHeaderHeight;
     display: flex;
     align-items: center;
   }
 
   a {
-    margin-right: 20px;
+    margin-right: 5px;
+    padding: 14px;
+
+    &.current {
+      color: $darkPrimaryColor;
+      border-bottom: 1px solid $darkPrimaryColor;
+    }
   }
 
 

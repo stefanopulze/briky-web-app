@@ -1,8 +1,33 @@
-<div class="container">
+<div class="container container-margin-top">
+
+  <app-white-box title="Andamento uscite">
+    <nav>
+      <a (click)="setDate(-1,'Y')" [class.current]="filter.alias==='-1Y'">1 Anno</a>
+      <a (click)="setDate(-6,'M')" [class.current]="filter.alias==='-6M'">6 Mesi</a>
+      <a (click)="setDate(-3,'M')" [class.current]="filter.alias==='-3M'">3 Mesi</a>
+    </nav>
+
+    <section>
+      <canvas #c height="100"></canvas>
+    </section>
+
+  </app-white-box>
+
+
+  <div class="flex">
+    <app-white-box class="col" title="Tag">
+      <section>
+        aaa
+      </section>
+    </app-white-box>
+    <app-white-box class="col" title="Uscite">
+      <section>
+        bbb
+      </section>
+    </app-white-box>
+
+  </div>
 
   <app-date-filter (change)="loadNewData($event)"></app-date-filter>
 
-  <div class="chart-box">
-    <canvas #c height="100"></canvas>
-  </div>
 </div>

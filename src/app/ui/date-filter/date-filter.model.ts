@@ -1,6 +1,7 @@
 
 export class Filter {
 
+  alias: string;
   group: string;
   from: Date;
   to: Date;

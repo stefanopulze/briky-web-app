@@ -2,8 +2,21 @@
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+
+  &-margin-top {
+    margin-top: 20px;
+  }
 }
 
 .flex {
   display: flex;
+}
+
+.col {
+  flex:1;
+  margin-right: 2em;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
