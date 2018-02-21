@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
-import {ExpenseValue} from "../model/expense.model";
+import {Expense, ExpenseValue} from "../model/expense.model";
 import {environment} from "../../environments/environment";
 import {Filter} from "../ui/date-filter/date-filter.model";
 
@@ -13,4 +13,16 @@ export class ExpencesService {
   values(filter: Filter): Observable<ExpenseValue[]> {
     return this.http.post<ExpenseValue[]>(environment.endpoint + "/expenses/value", filter);
   }
+
+  find(filter: Filter): Observable<Expense[]> {
+    let params = new HttpParams();
+
+    params = params.append("size", "" + filter.size);
+
+    console.log(filter.size, filter, params);
+    return this.http.get<Expense[]>(environment.endpoint + "/expenses", {
+      params: params
+    });
+  }
+
 }

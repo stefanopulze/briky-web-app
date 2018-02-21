@@ -17,6 +17,8 @@ import {ExpencesService} from "./service/expences.service";
 import { DateFilterComponent } from './ui/date-filter/date-filter.component';
 import { WhiteBoxComponent } from './ui/white-box/white-box.component';
 import { AnalyticsComponent } from './page/analytics/analytics.component';
+import { NewExpenseComponent } from './page/new-expense/new-expense.component';
+import {AiService} from "./service/ai.service";
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { AnalyticsComponent } from './page/analytics/analytics.component';
     PillsComponent,
     DateFilterComponent,
     WhiteBoxComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    NewExpenseComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { AnalyticsComponent } from './page/analytics/analytics.component';
     AuthStorage,
     AuthService,
     ExpencesService,
+    AiService,
     EuroPipe
   ],
   bootstrap: [AppComponent]

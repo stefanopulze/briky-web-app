@@ -15,19 +15,38 @@
 
 
   <div class="flex">
-    <app-white-box class="col" title="Tag">
-      <section>
-        aaa
+    <app-white-box class="col" title="Ultime Uscite">
+      <nav>
+        <a>10</a>
+        <a>20</a>
+        <a>30</a>
+      </nav>
+      <section class="no-padding">
+        <div *ngFor="let expense of expenses" class="flex expense-item">
+          <div>{{expense.createdAt | date}}</div>
+          <div>{{expense.description}}</div>
+          <div>{{expense.value | euro}}</div>
+        </div>
       </section>
     </app-white-box>
-    <app-white-box class="col" title="Uscite">
+    <app-white-box class="col" title="Andamento Mese">
       <section>
         bbb
       </section>
     </app-white-box>
-
   </div>
 
-  <app-date-filter (change)="loadNewData($event)"></app-date-filter>
+  <div class="flex">
+    <app-white-box class="col" title="Categorie">
+      <nav>
+        <a>10</a>
+        <a>20</a>
+        <a>30</a>
+      </nav>
+      <section>
+        aaa
+      </section>
+    </app-white-box>
+  </div>
 
 </div>

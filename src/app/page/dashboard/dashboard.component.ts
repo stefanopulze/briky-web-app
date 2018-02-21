@@ -2,14 +2,14 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Chart} from 'chart.js';
 import {ExpencesService} from "../../service/expences.service";
 import {EuroPipe} from "../../pipe/euro.pipe";
-import {ExpenseValue} from "../../model/expense.model";
+import {Expense, ExpenseValue} from "../../model/expense.model";
 import {Filter} from "../../ui/date-filter/date-filter.model";
 import * as moment from "moment";
 
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html
+  templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
 
@@ -18,18 +18,28 @@ export class DashboardComponent implements OnInit {
   chart: Chart;
   filter = new Filter();
 
+  expenseFilter = new Filter();
+  expenses: Expense[];
+
+
   constructor(private expService: ExpencesService, private euro: EuroPipe) {
   }
 
   ngOnInit() {
     this.setDate(-6, 'M');
+    this.expenseFilter.size = 5;
+
+
+    this.expService.find(this.expenseFilter).subscribe(data => {
+      this.expenses = data;
+    });
   }
 
-  setDate(amount: number, unit: string) {
-    this.filter.from = moment().add(amount, unit).toDate();
+  setDate(amount: number, units: any) {
+    this.filter.from = moment().add(amount, units).toDate();
     this.filter.to = new Date();
     this.filter.group = 'MONTH';
-    this.filter.alias = amount + unit;
+    this.filter.alias = amount + units;
 
     this.expService.values(this.filter).subscribe(this.drawChart.bind(this));
   }
